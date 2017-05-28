@@ -85,7 +85,7 @@ void enc_dec_file()
     BYTE *encrypted_data;
     BYTE *decrypted_data;
     //char *filename = "sample_files/hubble_1.tif";
-    const char *filename = "sample_files/hubble_3.tif";
+    const char *filename = "sample_files/hubble_1.tif";
 
     BYTE key1[DES_BLOCK_SIZE] = {0x01,0x23,0x45,0x67,0x89,0xAB,0xCD,0xEF};
     BYTE schedule[16][6];
@@ -114,7 +114,7 @@ void enc_dec_file()
     BYTE data_dec[DES_BLOCK_SIZE];
 
     for(int i = 0; i < st.st_size; i++){
-        
+        //printf("Valor de i antes: %i \n", i);
         for(int j = 0; j < DES_BLOCK_SIZE; j++){
             if(i < st.st_size){
                 data_buf[j] = data[i];
@@ -136,14 +136,17 @@ void enc_dec_file()
                 i++;
             };
         };
+	//i = i+8;
         
+        /*
+        printf("Valor de i: %i \n", i);*/
         i--;
     };
 
     //FILE *enc_file = fopen("hubble_1_enc.tif", "wb+");
     //FILE *dec_file = fopen("hubble_1_dec.tif", "wb+");
-    FILE *enc_file = fopen("hubble_3_enc.tif", "wb+");
-    FILE *dec_file = fopen("hubble_3_dec.tif", "wb+");
+    FILE *enc_file = fopen("hubble_1_enc.tif", "wb+");
+    FILE *dec_file = fopen("hubble_1_dec.tif", "wb+");
 
 
     fwrite(encrypted_data, sizeof(BYTE) * st.st_size, 1, enc_file);

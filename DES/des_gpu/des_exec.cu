@@ -20,7 +20,7 @@
 #define SBOXBIT(a) (((a) & 0x20) | (((a) & 0x1f) >> 1) | (((a) & 0x01) << 4))
 
 #define DES_BLOCK_SIZE 8                // DES operates on 8 bytes at a time
-#define BLOCK_OF_BYTES 256		// Bloco de processamento de Bytes
+
 
 /**************************** DATA TYPES ****************************/
 typedef unsigned char BYTE;             // 8-bit byte
@@ -395,12 +395,11 @@ __global__ void paralell_enc_dec(const BYTE *data, BYTE *encrypted_data, BYTE *d
     BYTE key1[DES_BLOCK_SIZE] = {0x01,0x23,0x45,0x67,0x89,0xAB,0xCD,0xEF};
     BYTE schedule[16][6];
 
-    int i = (blockDim.x * blockIdx.x + threadIdx.x)*DES_BLOCK_SIZE*BLOCK_OF_BYTES;
+    int i = (blockDim.x * blockIdx.x + threadIdx.x)*DES_BLOCK_SIZE;
    if (i < size){
         for(int j = 0; j < DES_BLOCK_SIZE; j++){	    
             if(i < size){
                 data_buf[j] = data[i];
-                //printf("Valor do segundo i: %i",i);
                 i++;
             };
         };
@@ -419,9 +418,6 @@ __global__ void paralell_enc_dec(const BYTE *data, BYTE *encrypted_data, BYTE *d
                 i++;
             };
         };
-
-        //i--;
-	//printf("Valor de i: %i",i);
     };
     
 
@@ -440,7 +436,7 @@ void enc_dec_file()
     BYTE *d_encrypted_data;
     BYTE *d_decrypted_data;
     const char *filename = "sample_files/hubble_1.tif";
-    //const char *filename = "sample_files/hubble_2.png";
+
 
     // Error code to check return values for CUDA calls
     cudaError_t err = cudaSuccess;
@@ -451,6 +447,7 @@ void enc_dec_file()
         h_data = (BYTE *) malloc(sizeof(BYTE) * st.st_size);
     };
 
+    printf("SIZE of BYTE: %d \n",sizeof(BYTE));
     FILE *file = fopen(filename, "rb");
 
     if(h_data != NULL && file){
@@ -461,6 +458,7 @@ void enc_dec_file()
         };
     };
 
+printf("ST.SIZE: %d \n",sizeof(BYTE) *st.st_size);
     h_encrypted_data = (BYTE *) malloc(sizeof(BYTE) * st.st_size);
     h_decrypted_data = (BYTE *) malloc(sizeof(BYTE) * st.st_size);
     
@@ -504,12 +502,12 @@ void enc_dec_file()
     }
 
     // Launch the paralell_enc_dec CUDA Kernel
-    int threadsPerBlock = 256;
-    int blocksPerGrid =((sizeof(BYTE) * st.st_size)/(DES_BLOCK_SIZE*BLOCK_OF_BYTES)/threadsPerBlock)+1;
-    //int blocksPerGrid = 8;
-   
+    int threadsPerBlock = 512;
+    int blocksPerGrid =( (sizeof(BYTE) * st.st_size)/(threadsPerBlock * DES_BLOCK_SIZE) )+1;
+    //int blocksPerGrid = 7853;
+    //printf("Tamanho do Arquivo: %d \n", sizeof(BYTE) * st.st_size);
     printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
-    paralell_enc_dec<<<blocksPerGrid, threadsPerBlock>>>(d_data,d_encrypted_data,d_decrypted_data,sizeof(BYTE) * st.st_size);
+    paralell_enc_dec<<<blocksPerGrid, threadsPerBlock>>>(d_data,d_encrypted_data,d_decrypted_data,st.st_size);
 
 
     err = cudaGetLastError();
@@ -523,7 +521,7 @@ void enc_dec_file()
     // Copy the device result encrypted_data in device memory to the host result vector
     // in host memory.
     printf("Copy output encrypted_data from the CUDA device to the host memory\n");
-    err = cudaMemcpy(h_encrypted_data, d_encrypted_data, sizeof(BYTE) * st.st_size, cudaMemcpyDeviceToHost);
+    err = cudaMemcpy(h_encrypted_data, d_encrypted_data, st.st_size, cudaMemcpyDeviceToHost);
 
     if (err != cudaSuccess)
     {
@@ -578,14 +576,58 @@ void enc_dec_file()
 
     FILE *enc_file = fopen("hubble_1_enc.tif", "wb+");
     FILE *dec_file = fopen("hubble_1_dec.tif", "wb+");
-    //FILE *enc_file = fopen("hubble_2_enc.png", "wb+");
-    //FILE *dec_file = fopen("hubble_2_dec.png", "wb+");
 
     fwrite(h_encrypted_data, sizeof(BYTE) * st.st_size, 1, enc_file);
     fwrite(h_decrypted_data, sizeof(BYTE) * st.st_size, 1, dec_file);
 
     fclose(enc_file);
     fclose(dec_file);
+
+    // Free device global memory
+    err = cudaFree(d_data);
+
+    if (err != cudaSuccess)
+    {
+        fprintf(stderr, "Failed to free device Data d_data (error code %s)!\n", cudaGetErrorString(err));
+        exit(EXIT_FAILURE);
+    }
+
+    err = cudaFree(d_encrypted_data);
+
+    if (err != cudaSuccess)
+    {
+        fprintf(stderr, "Failed to free device Data d_encrypted_data (error code %s)!\n", cudaGetErrorString(err));
+        exit(EXIT_FAILURE);
+    }
+
+    err = cudaFree(d_decrypted_data);
+
+    if (err != cudaSuccess)
+    {
+        fprintf(stderr, "Failed to free device Data d_decrypted_data (error code %s)!\n", cudaGetErrorString(err));
+        exit(EXIT_FAILURE);
+    }
+
+    // Free host memory
+    free(h_data);
+    free(h_encrypted_data);
+    free(h_decrypted_data);
+
+    // Reset the device and exit
+    // cudaDeviceReset causes the driver to clean up all state. While
+    // not mandatory in normal operation, it is good practice.  It is also
+    // needed to ensure correct operation when the application is being
+    // profiled. Calling cudaDeviceReset causes all profile data to be
+    // flushed before the application exits
+    err = cudaDeviceReset();
+
+    if (err != cudaSuccess)
+    {
+        fprintf(stderr, "Failed to deinitialize the device! error=%s\n", cudaGetErrorString(err));
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Done\n");
 };
 
 
