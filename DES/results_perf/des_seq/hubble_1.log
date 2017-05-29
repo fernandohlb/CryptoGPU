@@ -1,0 +1,180 @@
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        690,255581      task-clock (msec)         #    1,000 CPUs utilized          
+                 4      context-switches          #    0,006 K/sec                  
+                 1      cpu-migrations            #    0,001 K/sec                  
+               433      page-faults               #    0,627 K/sec                  
+     2.045.051.181      cycles                    #    2,963 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.445.362.310      instructions              #    3,15  insns per cycle        
+       172.598.351      branches                  #  250,050 M/sec                  
+           242.553      branch-misses             #    0,14% of all branches        
+
+       0,690570512 seconds time elapsed
+
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        667,640575      task-clock (msec)         #    1,000 CPUs utilized          
+                 2      context-switches          #    0,003 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               436      page-faults               #    0,653 K/sec                  
+     2.045.197.532      cycles                    #    3,063 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.445.194.006      instructions              #    3,15  insns per cycle        
+       172.573.839      branches                  #  258,483 M/sec                  
+           224.675      branch-misses             #    0,13% of all branches        
+
+       0,667825370 seconds time elapsed
+
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        698,787650      task-clock (msec)         #    1,000 CPUs utilized          
+                 2      context-switches          #    0,003 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               434      page-faults               #    0,621 K/sec                  
+     2.154.804.529      cycles                    #    3,084 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.461.718.991      instructions              #    3,00  insns per cycle        
+       175.623.119      branches                  #  251,325 M/sec                  
+           251.858      branch-misses             #    0,14% of all branches        
+
+       0,698961059 seconds time elapsed
+
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        680,344425      task-clock (msec)         #    1,000 CPUs utilized          
+                 3      context-switches          #    0,004 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               434      page-faults               #    0,638 K/sec                  
+     2.085.016.644      cycles                    #    3,065 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.445.182.606      instructions              #    3,09  insns per cycle        
+       172.572.231      branches                  #  253,654 M/sec                  
+           231.072      branch-misses             #    0,13% of all branches        
+
+       0,680530758 seconds time elapsed
+
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        668,899253      task-clock (msec)         #    1,000 CPUs utilized          
+                 8      context-switches          #    0,012 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               434      page-faults               #    0,649 K/sec                  
+     2.049.664.314      cycles                    #    3,064 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.445.228.041      instructions              #    3,14  insns per cycle        
+       172.581.822      branches                  #  258,009 M/sec                  
+           235.769      branch-misses             #    0,14% of all branches        
+
+       0,669166462 seconds time elapsed
+
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        667,917147      task-clock (msec)         #    0,995 CPUs utilized          
+                 4      context-switches          #    0,006 K/sec                  
+                 1      cpu-migrations            #    0,001 K/sec                  
+               433      page-faults               #    0,648 K/sec                  
+     2.048.191.212      cycles                    #    3,067 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.445.219.217      instructions              #    3,15  insns per cycle        
+       172.582.502      branches                  #  258,389 M/sec                  
+           242.586      branch-misses             #    0,14% of all branches        
+
+       0,671581323 seconds time elapsed
+
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        689,787956      task-clock (msec)         #    1,000 CPUs utilized          
+                 1      context-switches          #    0,001 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               433      page-faults               #    0,628 K/sec                  
+     2.064.443.112      cycles                    #    2,993 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.461.608.616      instructions              #    3,13  insns per cycle        
+       175.599.964      branches                  #  254,571 M/sec                  
+           248.793      branch-misses             #    0,14% of all branches        
+
+       0,689886839 seconds time elapsed
+
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        667,557137      task-clock (msec)         #    1,000 CPUs utilized          
+                 2      context-switches          #    0,003 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               433      page-faults               #    0,649 K/sec                  
+     2.047.747.150      cycles                    #    3,068 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.445.208.879      instructions              #    3,15  insns per cycle        
+       172.580.369      branches                  #  258,525 M/sec                  
+           236.481      branch-misses             #    0,14% of all branches        
+
+       0,667719485 seconds time elapsed
+
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        667,377471      task-clock (msec)         #    1,000 CPUs utilized          
+                 2      context-switches          #    0,003 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               436      page-faults               #    0,653 K/sec                  
+     2.048.215.987      cycles                    #    3,069 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.445.265.946      instructions              #    3,15  insns per cycle        
+       172.591.660      branches                  #  258,612 M/sec                  
+           243.400      branch-misses             #    0,14% of all branches        
+
+       0,667543570 seconds time elapsed
+
+Tamanho do Arquivo: 518634 
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/seq/des sample_files/hubble_1.tif':
+
+        665,944422      task-clock (msec)         #    1,000 CPUs utilized          
+                 2      context-switches          #    0,003 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+               434      page-faults               #    0,652 K/sec                  
+     2.045.409.380      cycles                    #    3,071 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     6.445.141.588      instructions              #    3,15  insns per cycle        
+       172.568.959      branches                  #  259,134 M/sec                  
+           241.479      branch-misses             #    0,14% of all branches        
+
+       0,666147728 seconds time elapsed
+

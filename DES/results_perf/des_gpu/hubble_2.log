@@ -1,0 +1,230 @@
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5466,794637      task-clock (msec)         #    0,992 CPUs utilized          
+               119      context-switches          #    0,022 K/sec                  
+                 3      cpu-migrations            #    0,001 K/sec                  
+             2.813      page-faults               #    0,515 K/sec                  
+    16.843.714.201      cycles                    #    3,081 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    24.644.040.470      instructions              #    1,46  insns per cycle        
+     5.546.506.479      branches                  # 1014,581 M/sec                  
+           378.105      branch-misses             #    0,01% of all branches        
+
+       5,512482918 seconds time elapsed
+
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5463,933015      task-clock (msec)         #    0,991 CPUs utilized          
+               121      context-switches          #    0,022 K/sec                  
+                 7      cpu-migrations            #    0,001 K/sec                  
+             2.301      page-faults               #    0,421 K/sec                  
+    16.815.376.949      cycles                    #    3,078 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    24.328.813.440      instructions              #    1,45  insns per cycle        
+     5.476.264.540      branches                  # 1002,257 M/sec                  
+           385.521      branch-misses             #    0,01% of all branches        
+
+       5,510918915 seconds time elapsed
+
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5476,913823      task-clock (msec)         #    0,992 CPUs utilized          
+               121      context-switches          #    0,022 K/sec                  
+                 4      cpu-migrations            #    0,001 K/sec                  
+             2.299      page-faults               #    0,420 K/sec                  
+    16.884.320.569      cycles                    #    3,083 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    24.506.734.842      instructions              #    1,45  insns per cycle        
+     5.515.991.371      branches                  # 1007,135 M/sec                  
+           367.463      branch-misses             #    0,01% of all branches        
+
+       5,522482977 seconds time elapsed
+
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5462,852082      task-clock (msec)         #    0,992 CPUs utilized          
+               119      context-switches          #    0,022 K/sec                  
+                 4      cpu-migrations            #    0,001 K/sec                  
+             2.299      page-faults               #    0,421 K/sec                  
+    16.839.786.210      cycles                    #    3,083 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    24.436.849.451      instructions              #    1,45  insns per cycle        
+     5.500.143.582      branches                  # 1006,826 M/sec                  
+           375.032      branch-misses             #    0,01% of all branches        
+
+       5,508817581 seconds time elapsed
+
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5463,357475      task-clock (msec)         #    0,991 CPUs utilized          
+               121      context-switches          #    0,022 K/sec                  
+                 4      cpu-migrations            #    0,001 K/sec                  
+             2.299      page-faults               #    0,421 K/sec                  
+    16.846.229.375      cycles                    #    3,083 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    24.139.620.386      instructions              #    1,43  insns per cycle        
+     5.433.905.826      branches                  #  994,609 M/sec                  
+           370.707      branch-misses             #    0,01% of all branches        
+
+       5,511076964 seconds time elapsed
+
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5462,860149      task-clock (msec)         #    0,991 CPUs utilized          
+               176      context-switches          #    0,032 K/sec                  
+                 9      cpu-migrations            #    0,002 K/sec                  
+             2.811      page-faults               #    0,515 K/sec                  
+    16.814.186.186      cycles                    #    3,078 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    24.320.195.403      instructions              #    1,45  insns per cycle        
+     5.474.228.593      branches                  # 1002,081 M/sec                  
+           366.748      branch-misses             #    0,01% of all branches        
+
+       5,514370677 seconds time elapsed
+
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5462,446217      task-clock (msec)         #    0,991 CPUs utilized          
+               119      context-switches          #    0,022 K/sec                  
+                 4      cpu-migrations            #    0,001 K/sec                  
+             2.299      page-faults               #    0,421 K/sec                  
+    16.832.479.989      cycles                    #    3,081 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    24.736.201.595      instructions              #    1,47  insns per cycle        
+     5.567.532.692      branches                  # 1019,238 M/sec                  
+           370.297      branch-misses             #    0,01% of all branches        
+
+       5,509585568 seconds time elapsed
+
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5457,555581      task-clock (msec)         #    0,991 CPUs utilized          
+               123      context-switches          #    0,023 K/sec                  
+                 4      cpu-migrations            #    0,001 K/sec                  
+             2.300      page-faults               #    0,421 K/sec                  
+    16.821.003.516      cycles                    #    3,082 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    24.596.905.519      instructions              #    1,46  insns per cycle        
+     5.536.346.491      branches                  # 1014,437 M/sec                  
+           385.267      branch-misses             #    0,01% of all branches        
+
+       5,505533845 seconds time elapsed
+
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5470,495146      task-clock (msec)         #    0,992 CPUs utilized          
+               115      context-switches          #    0,021 K/sec                  
+                 3      cpu-migrations            #    0,001 K/sec                  
+             2.299      page-faults               #    0,420 K/sec                  
+    16.864.844.785      cycles                    #    3,083 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    23.274.282.159      instructions              #    1,38  insns per cycle        
+     5.240.092.963      branches                  #  957,883 M/sec                  
+           369.022      branch-misses             #    0,01% of all branches        
+
+       5,515842400 seconds time elapsed
+
+Copy input BYTE data from the host memory to the CUDA device
+Tamanho do Arquivo: 12910034 
+CUDA kernel launch with 6304 blocks of 256 threads
+Copy output encrypted_data from the CUDA device to the host memory
+Copy output decrypted_data from the CUDA device to the host memory
+Done
+DES test: SUCCEEDED
+
+ Performance counter stats for './DES/gpu/des_exec sample_files/hubble_2.tif 256':
+
+       5462,962302      task-clock (msec)         #    0,992 CPUs utilized          
+               125      context-switches          #    0,023 K/sec                  
+                 4      cpu-migrations            #    0,001 K/sec                  
+             2.812      page-faults               #    0,515 K/sec                  
+    16.846.912.551      cycles                    #    3,084 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+    24.806.049.161      instructions              #    1,47  insns per cycle        
+     5.582.957.659      branches                  # 1021,965 M/sec                  
+           383.353      branch-misses             #    0,01% of all branches        
+
+       5,508321377 seconds time elapsed
+

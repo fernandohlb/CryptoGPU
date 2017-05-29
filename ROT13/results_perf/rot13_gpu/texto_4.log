@@ -1,0 +1,220 @@
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        196,679453      task-clock (msec)         #    0,802 CPUs utilized          
+                46      context-switches          #    0,234 K/sec                  
+                 6      cpu-migrations            #    0,031 K/sec                  
+             3.291      page-faults               #    0,017 M/sec                  
+       573.558.785      cycles                    #    2,916 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       846.914.990      instructions              #    1,48  insns per cycle        
+       200.022.300      branches                  # 1016,996 M/sec                  
+           321.734      branch-misses             #    0,16% of all branches        
+
+       0,245097152 seconds time elapsed
+
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        198,011714      task-clock (msec)         #    0,804 CPUs utilized          
+                46      context-switches          #    0,232 K/sec                  
+                 4      cpu-migrations            #    0,020 K/sec                  
+             2.777      page-faults               #    0,014 M/sec                  
+       570.979.269      cycles                    #    2,884 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       846.281.198      instructions              #    1,48  insns per cycle        
+       199.910.811      branches                  # 1009,591 M/sec                  
+           320.539      branch-misses             #    0,16% of all branches        
+
+       0,246245626 seconds time elapsed
+
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        197,815451      task-clock (msec)         #    0,803 CPUs utilized          
+                46      context-switches          #    0,233 K/sec                  
+                 3      cpu-migrations            #    0,015 K/sec                  
+             3.286      page-faults               #    0,017 M/sec                  
+       573.490.993      cycles                    #    2,899 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       847.017.394      instructions              #    1,48  insns per cycle        
+       200.006.535      branches                  # 1011,076 M/sec                  
+           320.778      branch-misses             #    0,16% of all branches        
+
+       0,246401631 seconds time elapsed
+
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        200,650280      task-clock (msec)         #    0,808 CPUs utilized          
+                48      context-switches          #    0,239 K/sec                  
+                 6      cpu-migrations            #    0,030 K/sec                  
+             2.778      page-faults               #    0,014 M/sec                  
+       571.399.018      cycles                    #    2,848 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       844.776.775      instructions              #    1,48  insns per cycle        
+       199.526.132      branches                  #  994,397 M/sec                  
+           327.652      branch-misses             #    0,16% of all branches        
+
+       0,248438305 seconds time elapsed
+
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        197,834095      task-clock (msec)         #    0,804 CPUs utilized          
+                47      context-switches          #    0,238 K/sec                  
+                 5      cpu-migrations            #    0,025 K/sec                  
+             2.776      page-faults               #    0,014 M/sec                  
+       568.623.970      cycles                    #    2,874 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       845.004.434      instructions              #    1,49  insns per cycle        
+       199.638.180      branches                  # 1009,119 M/sec                  
+           316.902      branch-misses             #    0,16% of all branches        
+
+       0,246201579 seconds time elapsed
+
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        199,569481      task-clock (msec)         #    0,812 CPUs utilized          
+                45      context-switches          #    0,225 K/sec                  
+                 3      cpu-migrations            #    0,015 K/sec                  
+             3.290      page-faults               #    0,016 M/sec                  
+       586.328.014      cycles                    #    2,938 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       852.307.793      instructions              #    1,45  insns per cycle        
+       201.036.945      branches                  # 1007,353 M/sec                  
+           321.499      branch-misses             #    0,16% of all branches        
+
+       0,245790220 seconds time elapsed
+
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        202,046418      task-clock (msec)         #    0,813 CPUs utilized          
+                45      context-switches          #    0,223 K/sec                  
+                 5      cpu-migrations            #    0,025 K/sec                  
+             2.779      page-faults               #    0,014 M/sec                  
+       578.625.911      cycles                    #    2,864 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       849.438.614      instructions              #    1,47  insns per cycle        
+       200.497.939      branches                  #  992,336 M/sec                  
+           327.362      branch-misses             #    0,16% of all branches        
+
+       0,248383279 seconds time elapsed
+
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        198,730550      task-clock (msec)         #    0,811 CPUs utilized          
+                45      context-switches          #    0,226 K/sec                  
+                 4      cpu-migrations            #    0,020 K/sec                  
+             2.778      page-faults               #    0,014 M/sec                  
+       582.663.453      cycles                    #    2,932 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       850.013.096      instructions              #    1,46  insns per cycle        
+       200.611.319      branches                  # 1009,464 M/sec                  
+           328.515      branch-misses             #    0,16% of all branches        
+
+       0,244963551 seconds time elapsed
+
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        201,745993      task-clock (msec)         #    0,806 CPUs utilized          
+                46      context-switches          #    0,228 K/sec                  
+                 4      cpu-migrations            #    0,020 K/sec                  
+             3.291      page-faults               #    0,016 M/sec                  
+       569.824.362      cycles                    #    2,824 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       847.204.255      instructions              #    1,49  insns per cycle        
+       200.072.736      branches                  #  991,706 M/sec                  
+           331.552      branch-misses             #    0,17% of all branches        
+
+       0,250423545 seconds time elapsed
+
+Copy input data from the host memory to the CUDA device
+Tamanho do Arquivo: 4452070 
+CUDA kernel launch with 17391 blocks of 256 threads
+Copy output data from the CUDA device to the host memory
+Copy output data from the CUDA device to the host memory
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_4.txt 256':
+
+        203,729412      task-clock (msec)         #    0,815 CPUs utilized          
+                48      context-switches          #    0,236 K/sec                  
+                 3      cpu-migrations            #    0,015 K/sec                  
+             3.292      page-faults               #    0,016 M/sec                  
+       580.275.080      cycles                    #    2,848 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+       850.472.699      instructions              #    1,47  insns per cycle        
+       200.569.570      branches                  #  984,490 M/sec                  
+           325.848      branch-misses             #    0,16% of all branches        
+
+       0,249865259 seconds time elapsed
+

@@ -1,0 +1,180 @@
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        202,595838      task-clock (msec)         #    0,998 CPUs utilized          
+                 0      context-switches          #    0,000 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1.844      page-faults               #    0,009 M/sec                  
+       591.220.965      cycles                    #    2,918 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.055.164.034      instructions              #    1,78  insns per cycle        
+       193.567.023      branches                  #  955,434 M/sec                  
+         4.580.001      branch-misses             #    2,37% of all branches        
+
+       0,202964911 seconds time elapsed
+
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        192,858803      task-clock (msec)         #    0,999 CPUs utilized          
+                 1      context-switches          #    0,005 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1.274      page-faults               #    0,007 M/sec                  
+       590.679.546      cycles                    #    3,063 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.053.461.641      instructions              #    1,78  insns per cycle        
+       193.274.453      branches                  # 1002,155 M/sec                  
+         4.576.303      branch-misses             #    2,37% of all branches        
+
+       0,193057503 seconds time elapsed
+
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        193,344647      task-clock (msec)         #    0,999 CPUs utilized          
+                 1      context-switches          #    0,005 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             2.357      page-faults               #    0,012 M/sec                  
+       592.132.855      cycles                    #    3,063 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.056.306.473      instructions              #    1,78  insns per cycle        
+       193.757.064      branches                  # 1002,133 M/sec                  
+         4.580.774      branch-misses             #    2,36% of all branches        
+
+       0,193548145 seconds time elapsed
+
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        193,376840      task-clock (msec)         #    0,999 CPUs utilized          
+                 0      context-switches          #    0,000 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1.843      page-faults               #    0,010 M/sec                  
+       591.227.064      cycles                    #    3,057 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.055.117.981      instructions              #    1,78  insns per cycle        
+       193.554.993      branches                  # 1000,921 M/sec                  
+         4.576.220      branch-misses             #    2,36% of all branches        
+
+       0,193584065 seconds time elapsed
+
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        222,897663      task-clock (msec)         #    0,999 CPUs utilized          
+                 0      context-switches          #    0,000 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             2.357      page-faults               #    0,011 M/sec                  
+       622.372.182      cycles                    #    2,792 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.056.336.400      instructions              #    1,70  insns per cycle        
+       193.761.263      branches                  #  869,284 M/sec                  
+         4.579.335      branch-misses             #    2,36% of all branches        
+
+       0,223087728 seconds time elapsed
+
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        193,473349      task-clock (msec)         #    0,999 CPUs utilized          
+                 3      context-switches          #    0,016 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             2.355      page-faults               #    0,012 M/sec                  
+       593.656.580      cycles                    #    3,068 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.056.351.845      instructions              #    1,78  insns per cycle        
+       193.761.484      branches                  # 1001,489 M/sec                  
+         4.578.312      branch-misses             #    2,36% of all branches        
+
+       0,193705501 seconds time elapsed
+
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        193,090575      task-clock (msec)         #    0,999 CPUs utilized          
+                 0      context-switches          #    0,000 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1.846      page-faults               #    0,010 M/sec                  
+       592.744.334      cycles                    #    3,070 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.055.105.041      instructions              #    1,78  insns per cycle        
+       193.547.227      branches                  # 1002,365 M/sec                  
+         4.575.571      branch-misses             #    2,36% of all branches        
+
+       0,193333387 seconds time elapsed
+
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        192,266112      task-clock (msec)         #    0,999 CPUs utilized          
+                 0      context-switches          #    0,000 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1.847      page-faults               #    0,010 M/sec                  
+       591.575.391      cycles                    #    3,077 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.055.159.958      instructions              #    1,78  insns per cycle        
+       193.566.604      branches                  # 1006,764 M/sec                  
+         4.576.926      branch-misses             #    2,36% of all branches        
+
+       0,192447334 seconds time elapsed
+
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        193,635069      task-clock (msec)         #    0,999 CPUs utilized          
+                 1      context-switches          #    0,005 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             2.357      page-faults               #    0,012 M/sec                  
+       594.200.669      cycles                    #    3,069 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.056.420.733      instructions              #    1,78  insns per cycle        
+       193.786.769      branches                  # 1000,783 M/sec                  
+         4.583.288      branch-misses             #    2,37% of all branches        
+
+       0,193855746 seconds time elapsed
+
+Tamanho do Arquivo: 4452070 
+ROT-13 tests: SUCCEEDED
+
+ Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_4.txt':
+
+        192,621029      task-clock (msec)         #    0,999 CPUs utilized          
+                 1      context-switches          #    0,005 K/sec                  
+                 0      cpu-migrations            #    0,000 K/sec                  
+             1.846      page-faults               #    0,010 M/sec                  
+       591.091.480      cycles                    #    3,069 GHz                    
+   <not supported>      stalled-cycles-frontend  
+   <not supported>      stalled-cycles-backend   
+     1.055.458.889      instructions              #    1,79  insns per cycle        
+       193.616.482      branches                  # 1005,168 M/sec                  
+         4.583.028      branch-misses             #    2,37% of all branches        
+
+       0,192841660 seconds time elapsed
+
