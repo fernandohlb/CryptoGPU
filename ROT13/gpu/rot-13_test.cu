@@ -19,6 +19,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
+#include "../../include/time_utils.h"
 
 
 /*********************** FUNCTION DEFINITIONS ***********************/
@@ -51,7 +52,9 @@ __global__ void rot13(char str_in[], long size)
 
 int rot13_test(char filename[],int numThreads)
 {
-
+    struct timespec wc_start[STEPS_SIZE], wc_end[STEPS_SIZE];
+    double cpu_start[STEPS_SIZE], cpu_end[STEPS_SIZE];
+    start_timers(cpu_start, wc_start, alloc);
     char *data = NULL;
     char * data_buf = NULL;
     char *encrypted_data;
@@ -91,7 +94,7 @@ int rot13_test(char filename[],int numThreads)
 
     // Copy the host input vectors A and B in host memory to the device input vectors in
     // device memory
-    printf("Copy input data from the host memory to the CUDA device\n");
+    // printf("Copy input data from the host memory to the CUDA device\n");
     err = cudaMemcpy(d_data_buf, data, size, cudaMemcpyHostToDevice);
 
     if (err != cudaSuccess)
@@ -99,13 +102,15 @@ int rot13_test(char filename[],int numThreads)
         fprintf(stderr, "Failed to copy vector A from host to device (error code %s)!\n", cudaGetErrorString(err));
         exit(EXIT_FAILURE);
     }
+    end_timers(cpu_end, wc_end, alloc);
 
 
     // Launch the Vector Add CUDA Kernel
     int threadsPerBlock = numThreads;
     int blocksPerGrid = (size/threadsPerBlock)+1;
     printf("Tamanho do Arquivo: %i \n",size);
-    printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
+    start_timers(cpu_start, wc_start, calc);
+    // printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
     rot13<<<blocksPerGrid, threadsPerBlock>>>(d_data_buf,size);
     err = cudaGetLastError();
 
@@ -118,7 +123,7 @@ int rot13_test(char filename[],int numThreads)
 
     // Copy the device result vector in device memory to the host result vector
     // in host memory.
-    printf("Copy output data from the CUDA device to the host memory\n");
+    // printf("Copy output data from the CUDA device to the host memory\n");
     err = cudaMemcpy(data_buf, d_data_buf, size, cudaMemcpyDeviceToHost);
 
     if (err != cudaSuccess)
@@ -144,11 +149,13 @@ int rot13_test(char filename[],int numThreads)
         fprintf(stderr, "Failed to launch vectorAdd kernel (error code %s)!\n", cudaGetErrorString(err));
         exit(EXIT_FAILURE);
     }
+    cudaDeviceSynchronize();
+    end_timers(cpu_end, wc_end, calc);
 
 
     // Copy the device result vector in device memory to the host result vector
     // in host memory.
-    printf("Copy output data from the CUDA device to the host memory\n");
+    // printf("Copy output data from the CUDA device to the host memory\n");
     err = cudaMemcpy(data_buf, d_data_buf, size, cudaMemcpyDeviceToHost);
 
     if (err != cudaSuccess)
@@ -164,11 +171,15 @@ int rot13_test(char filename[],int numThreads)
     //Compara o dado Decriptografado com o Dado Original
     pass = pass && !strcmp(decrypted_data, data);
 
+    start_timers(cpu_start, wc_start, ioops);
     FILE *enc_file = fopen("text_enc.txt", "wb+");
     FILE *dec_file = fopen("text_dec.txt", "wb+");
 
     fwrite(encrypted_data, size, 1, enc_file);
     fwrite(decrypted_data, size, 1, dec_file);
+    end_timers(cpu_end, wc_end, ioops);
+
+    print_elapsed(cpu_start, wc_start, cpu_end, wc_end);
 
 
     // Free device global memory
@@ -199,7 +210,9 @@ int rot13_test(char filename[],int numThreads)
 int main(int argc, char *argv[ ])
 {
     int numThreads = strtol(argv[2], NULL, 10);
-    printf("ROT-13 tests: %s\n", rot13_test(argv[1],numThreads) ? "SUCCEEDED" : "FAILED");
+    printf("ROT-13 GPU tests\n");
+    rot13_test(argv[1],numThreads);
+    // printf("ROT-13 GPU tests: %s\n", rot13_test(argv[1],numThreads) ? "SUCCEEDED" : "FAILED");
 
     return(0);
 }

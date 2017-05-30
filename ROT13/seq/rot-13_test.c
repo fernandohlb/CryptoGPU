@@ -19,10 +19,14 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include "rot-13.h"
+#include "../../include/time_utils.h"
 
 /*********************** FUNCTION DEFINITIONS ***********************/
 int rot13_test(char filename[])
 {
+    struct timespec wc_start[STEPS_SIZE], wc_end[STEPS_SIZE];
+    double cpu_start[STEPS_SIZE], cpu_end[STEPS_SIZE];
+    start_timers(cpu_start, wc_start, alloc);
     char *data = NULL; 
     char *encrypted_data; 
     char *decrypted_data;  
@@ -52,29 +56,39 @@ int rot13_test(char filename[])
 
     // To encode, just apply ROT-13.
     strcpy(data_buf, data);
-    
+    end_timers(cpu_end, wc_end, alloc);
+
+    start_timers(cpu_start, wc_start, calc);
     rot13(data_buf);
     strcpy(encrypted_data, data_buf);
     //pass = pass && !strcmp(code, buf);
 
     // To decode, just re-apply ROT-13.
     rot13(data_buf);
+    end_timers(cpu_end, wc_end, calc);
     strcpy(decrypted_data, data_buf);
 
     //Compara o dado Decriptografado com o Dado Original
     pass = pass && !strcmp(decrypted_data, data);
 
+    start_timers(cpu_start, wc_start, ioops);
     FILE *enc_file = fopen("text_enc.txt", "wb+");
     FILE *dec_file = fopen("text_dec.txt", "wb+");
     
     fwrite(encrypted_data, sizeof(char) * st.st_size, 1, enc_file);
     fwrite(decrypted_data, sizeof(char) * st.st_size, 1, dec_file);
+    end_timers(cpu_end, wc_end, ioops);
+
+    print_elapsed(cpu_start, wc_start, cpu_end, wc_end);
+
     return(pass);
 }
 
 int main(int argc, char *argv[ ])
 {
-    printf("ROT-13 tests: %s\n", rot13_test(argv[1]) ? "SUCCEEDED" : "FAILED");
+    printf("ROT-13 SEQ tests\n");
+    rot13_test(argv[1]);
+    // printf("ROT-13 SEQ tests: %s\n", rot13_test(argv[1]) ? "SUCCEEDED" : "FAILED");
 
     return(0);
 }

@@ -1,220 +1,42 @@
-Copy input data from the host memory to the CUDA device
+ROT-13 GPU tests
 Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
+WC Time ALLOCATION: 0.066532
+CPU Time ALLOCATION: 0.065720
 
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
+WC Time ALGORITHM: 0.002104
+CPU Time ALGORITHM: 0.002097
 
-        143,300487      task-clock (msec)         #    0,756 CPUs utilized          
-                48      context-switches          #    0,335 K/sec                  
-                 6      cpu-migrations            #    0,042 K/sec                  
-             2.529      page-faults               #    0,018 M/sec                  
-       409.130.120      cycles                    #    2,855 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       456.005.707      instructions              #    1,11  insns per cycle        
-       105.884.078      branches                  #  738,895 M/sec                  
-           323.568      branch-misses             #    0,31% of all branches        
+WC Time IO OPERATION: 0.001815
+CPU Time IO OPERATION: 0.001809
 
-       0,189640979 seconds time elapsed
+Total WC Time: 0.070451
+Total CPU Time: 0.069626
 
-Copy input data from the host memory to the CUDA device
+ROT-13 GPU tests
 Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
+WC Time ALLOCATION: 0.067567
+CPU Time ALLOCATION: 0.066731
 
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
+WC Time ALGORITHM: 0.002196
+CPU Time ALGORITHM: 0.002175
 
-        142,970061      task-clock (msec)         #    0,752 CPUs utilized          
-                49      context-switches          #    0,343 K/sec                  
-                 6      cpu-migrations            #    0,042 K/sec                  
-             2.532      page-faults               #    0,018 M/sec                  
-       405.453.417      cycles                    #    2,836 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       452.631.456      instructions              #    1,12  insns per cycle        
-       105.316.713      branches                  #  736,635 M/sec                  
-           311.141      branch-misses             #    0,30% of all branches        
+WC Time IO OPERATION: 0.001809
+CPU Time IO OPERATION: 0.001800
 
-       0,190234764 seconds time elapsed
+Total WC Time: 0.071573
+Total CPU Time: 0.070706
 
-Copy input data from the host memory to the CUDA device
+ROT-13 GPU tests
 Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
+WC Time ALLOCATION: 0.066826
+CPU Time ALLOCATION: 0.065695
 
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
+WC Time ALGORITHM: 0.002120
+CPU Time ALGORITHM: 0.002111
 
-        145,002196      task-clock (msec)         #    0,758 CPUs utilized          
-                47      context-switches          #    0,324 K/sec                  
-                 4      cpu-migrations            #    0,028 K/sec                  
-             2.531      page-faults               #    0,017 M/sec                  
-       403.809.240      cycles                    #    2,785 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       455.040.042      instructions              #    1,13  insns per cycle        
-       105.694.830      branches                  #  728,919 M/sec                  
-           311.282      branch-misses             #    0,29% of all branches        
+WC Time IO OPERATION: 0.001838
+CPU Time IO OPERATION: 0.001830
 
-       0,191174854 seconds time elapsed
-
-Copy input data from the host memory to the CUDA device
-Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
-
-        142,263798      task-clock (msec)         #    0,756 CPUs utilized          
-                45      context-switches          #    0,316 K/sec                  
-                 4      cpu-migrations            #    0,028 K/sec                  
-             2.530      page-faults               #    0,018 M/sec                  
-       412.904.103      cycles                    #    2,902 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       457.059.256      instructions              #    1,11  insns per cycle        
-       106.011.606      branches                  #  745,176 M/sec                  
-           317.495      branch-misses             #    0,30% of all branches        
-
-       0,188123934 seconds time elapsed
-
-Copy input data from the host memory to the CUDA device
-Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
-
-        140,915630      task-clock (msec)         #    0,745 CPUs utilized          
-                47      context-switches          #    0,334 K/sec                  
-                 4      cpu-migrations            #    0,028 K/sec                  
-             2.529      page-faults               #    0,018 M/sec                  
-       408.994.787      cycles                    #    2,902 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       452.902.572      instructions              #    1,11  insns per cycle        
-       105.267.536      branches                  #  747,025 M/sec                  
-           317.446      branch-misses             #    0,30% of all branches        
-
-       0,189085076 seconds time elapsed
-
-Copy input data from the host memory to the CUDA device
-Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
-
-        143,231704      task-clock (msec)         #    0,746 CPUs utilized          
-                48      context-switches          #    0,335 K/sec                  
-                 3      cpu-migrations            #    0,021 K/sec                  
-             2.534      page-faults               #    0,018 M/sec                  
-       398.500.645      cycles                    #    2,782 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       451.132.154      instructions              #    1,13  insns per cycle        
-       104.929.559      branches                  #  732,586 M/sec                  
-           318.807      branch-misses             #    0,30% of all branches        
-
-       0,191930996 seconds time elapsed
-
-Copy input data from the host memory to the CUDA device
-Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
-
-        141,857128      task-clock (msec)         #    0,744 CPUs utilized          
-                48      context-switches          #    0,338 K/sec                  
-                 4      cpu-migrations            #    0,028 K/sec                  
-             2.527      page-faults               #    0,018 M/sec                  
-       400.891.093      cycles                    #    2,826 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       450.284.100      instructions              #    1,12  insns per cycle        
-       104.704.954      branches                  #  738,101 M/sec                  
-           315.297      branch-misses             #    0,30% of all branches        
-
-       0,190677854 seconds time elapsed
-
-Copy input data from the host memory to the CUDA device
-Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
-
-        144,043907      task-clock (msec)         #    0,754 CPUs utilized          
-                47      context-switches          #    0,326 K/sec                  
-                 5      cpu-migrations            #    0,035 K/sec                  
-             2.525      page-faults               #    0,018 M/sec                  
-       402.344.197      cycles                    #    2,793 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       452.051.520      instructions              #    1,12  insns per cycle        
-       105.083.421      branches                  #  729,524 M/sec                  
-           313.382      branch-misses             #    0,30% of all branches        
-
-       0,190949026 seconds time elapsed
-
-Copy input data from the host memory to the CUDA device
-Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
-
-        143,823304      task-clock (msec)         #    0,748 CPUs utilized          
-                50      context-switches          #    0,348 K/sec                  
-                 3      cpu-migrations            #    0,021 K/sec                  
-             2.532      page-faults               #    0,018 M/sec                  
-       399.043.534      cycles                    #    2,775 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       451.210.257      instructions              #    1,13  insns per cycle        
-       104.949.042      branches                  #  729,708 M/sec                  
-           310.003      branch-misses             #    0,30% of all branches        
-
-       0,192357542 seconds time elapsed
-
-Copy input data from the host memory to the CUDA device
-Tamanho do Arquivo: 1580879 
-CUDA kernel launch with 6176 blocks of 256 threads
-Copy output data from the CUDA device to the host memory
-Copy output data from the CUDA device to the host memory
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/gpu/rot-13_exec sample_files/texto_3.txt 256':
-
-        144,377326      task-clock (msec)         #    0,755 CPUs utilized          
-                46      context-switches          #    0,319 K/sec                  
-                 3      cpu-migrations            #    0,021 K/sec                  
-             2.528      page-faults               #    0,018 M/sec                  
-       409.587.894      cycles                    #    2,837 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       453.509.920      instructions              #    1,11  insns per cycle        
-       105.317.397      branches                  #  729,459 M/sec                  
-           318.896      branch-misses             #    0,30% of all branches        
-
-       0,191151887 seconds time elapsed
+Total WC Time: 0.070784
+Total CPU Time: 0.069636
 

@@ -9,6 +9,7 @@
 // For the CUDA runtime routines (prefixed with "cuda_")
 #include <cuda_runtime.h>
 #include <stdbool.h>
+#include "../../include/time_utils.h"
 /****************************** MACROS ******************************/
 // Obtain bit "b" from the left and shift it "c" places from the right
 #define BITNUM(a,b,c) (((a[(b)/8] >> (7 - (b%8))) & 0x01) << (c))
@@ -424,6 +425,9 @@ __global__ void paralell_enc_dec(const BYTE *data, BYTE *encrypted_data, BYTE *d
 /*********************** ENC DEC FUNCTION FOR TEST***********************/
 void enc_dec_file(char filename[],int numThreads)
 {
+    struct timespec wc_start[STEPS_SIZE], wc_end[STEPS_SIZE];
+    double cpu_start[STEPS_SIZE], cpu_end[STEPS_SIZE];
+    start_timers(cpu_start, wc_start, alloc);
     BYTE *h_data;
     BYTE *d_data = NULL;
     BYTE *h_encrypted_data;
@@ -488,7 +492,7 @@ void enc_dec_file(char filename[],int numThreads)
 
     // Copy the host BYTE data in host memory to the device in
     // device memory
-    printf("Copy input BYTE data from the host memory to the CUDA device\n");
+    // printf("Copy input BYTE data from the host memory to the CUDA device\n");
     err = cudaMemcpy(d_data, h_data, size, cudaMemcpyHostToDevice);
 
     if (err != cudaSuccess)
@@ -496,12 +500,14 @@ void enc_dec_file(char filename[],int numThreads)
         fprintf(stderr, "Failed to copy BYTE data from host to device (error code %s)!\n", cudaGetErrorString(err));
         exit(EXIT_FAILURE);
     }
+    end_timers(cpu_end, wc_end, alloc);
 
     // Launch the paralell_enc_dec CUDA Kernel
     int threadsPerBlock = numThreads;
     int blocksPerGrid =( size/(threadsPerBlock * DES_BLOCK_SIZE) )+1;
     printf("Tamanho do Arquivo: %i \n",size);
-    printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
+    // printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
+    start_timers(cpu_start, wc_start, calc);
     paralell_enc_dec<<<blocksPerGrid, threadsPerBlock>>>(d_data,d_encrypted_data,d_decrypted_data,size);
 
 
@@ -512,10 +518,13 @@ void enc_dec_file(char filename[],int numThreads)
 	fprintf(stderr, "Failed to launch paralell_enc_dec kernel (error code %s)!\n", cudaGetErrorString(err));
 	exit(EXIT_FAILURE);
     }
+    cudaDeviceSynchronize();
+    end_timers(cpu_end, wc_end, calc);
 
     // Copy the device result encrypted_data in device memory to the host result vector
     // in host memory.
-    printf("Copy output encrypted_data from the CUDA device to the host memory\n");
+    // printf("Copy output encrypted_data from the CUDA device to the host memory\n");
+    start_timers(cpu_start, wc_start, ioops);
     err = cudaMemcpy(h_encrypted_data, d_encrypted_data, size, cudaMemcpyDeviceToHost);
 
     if (err != cudaSuccess)
@@ -526,7 +535,7 @@ void enc_dec_file(char filename[],int numThreads)
 
     // Copy the device result decrypted_data in device memory to the host result vector
     // in host memory.
-    printf("Copy output decrypted_data from the CUDA device to the host memory\n");
+    // printf("Copy output decrypted_data from the CUDA device to the host memory\n");
     err = cudaMemcpy(h_decrypted_data, d_decrypted_data, size, cudaMemcpyDeviceToHost);
 
     if (err != cudaSuccess)
@@ -536,7 +545,6 @@ void enc_dec_file(char filename[],int numThreads)
     }
     
 
-
     FILE *enc_file = fopen("hubble_enc.tif", "wb+");
     FILE *dec_file = fopen("hubble_dec.tif", "wb+");
 
@@ -545,6 +553,9 @@ void enc_dec_file(char filename[],int numThreads)
 
     fclose(enc_file);
     fclose(dec_file);
+    end_timers(cpu_end, wc_end, ioops);
+
+    print_elapsed(cpu_start, wc_start, cpu_end, wc_end);
 
     // Free device global memory
     err = cudaFree(d_data);
@@ -590,7 +601,7 @@ void enc_dec_file(char filename[],int numThreads)
         exit(EXIT_FAILURE);
     }
 
-    printf("Done\n");
+    // printf("Done\n");
 };
 
 
@@ -598,7 +609,8 @@ int main(int argc, char *argv[ ])
 {
     int numThreads = strtol(argv[2], NULL, 10);
 
+    printf("DES GPU Tests\n");
     enc_dec_file(argv[1], numThreads);
-    printf("DES test: %s\n", des_test() ? "SUCCEEDED" : "FAILED");
+    // printf("DES GPU test: %s\n", des_test() ? "SUCCEEDED" : "FAILED");
     return(0);
 }

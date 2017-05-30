@@ -19,6 +19,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include "des.h"
+#include "../../include/time_utils.h"
 
 
 char * nomeArquivo;
@@ -84,6 +85,9 @@ int des_test()
 
 void enc_dec_file(char filename[])
 {
+    struct timespec wc_start[STEPS_SIZE], wc_end[STEPS_SIZE];
+    double cpu_start[STEPS_SIZE], cpu_end[STEPS_SIZE];
+    start_timers(cpu_start, wc_start, alloc);
     BYTE *data;
     BYTE *encrypted_data;
     BYTE *decrypted_data;
@@ -121,6 +125,9 @@ void enc_dec_file(char filename[])
     BYTE data_enc[DES_BLOCK_SIZE];
     BYTE data_dec[DES_BLOCK_SIZE];
     printf("Tamanho do Arquivo: %i \n",(int)st.st_size);
+    end_timers(cpu_end, wc_end, alloc);
+
+    start_timers(cpu_start, wc_start, calc);
     for(int i = 0; i < st.st_size; i++){
         //printf("Valor de i antes: %i \n", i);
         for(int j = 0; j < DES_BLOCK_SIZE; j++){
@@ -150,9 +157,9 @@ void enc_dec_file(char filename[])
         printf("Valor de i: %i \n", i);*/
         i--;
     };
+    end_timers(cpu_end, wc_end, calc);
 
-    //FILE *enc_file = fopen("hubble_1_enc.tif", "wb+");
-    //FILE *dec_file = fopen("hubble_1_dec.tif", "wb+");
+    start_timers(cpu_start, wc_start, ioops);
     FILE *enc_file = fopen("hubble_enc.tif", "wb+");
     FILE *dec_file = fopen("hubble_dec.tif", "wb+");
 
@@ -162,13 +169,17 @@ void enc_dec_file(char filename[])
 
     fclose(enc_file);
     fclose(dec_file);
+    end_timers(cpu_end, wc_end, ioops);
+
+    print_elapsed(cpu_start, wc_start, cpu_end, wc_end);
 };
 
 int main(int argc, char *argv[ ])
 {
     ///sscanf(argv[0], "%s", nomeArquivo);
     //printf("Teste: %s",argv[1]);
+    printf("DES SEQ Tests\n");
     enc_dec_file(argv[1]);
-    printf("DES test: %s\n", des_test() ? "SUCCEEDED" : "FAILED");
+    // printf("DES test: %s\n", des_test() ? "SUCCEEDED" : "FAILED");
     return(0);
 }

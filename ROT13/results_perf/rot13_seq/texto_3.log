@@ -1,180 +1,42 @@
+ROT-13 SEQ tests
 Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
+WC Time ALLOCATION: 0.036692
+CPU Time ALLOCATION: 0.036532
 
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
+WC Time ALGORITHM: 0.044303
+CPU Time ALGORITHM: 0.044247
 
-         81,890959      task-clock (msec)         #    0,995 CPUs utilized          
-                 4      context-switches          #    0,049 K/sec                  
-                 1      cpu-migrations            #    0,012 K/sec                  
-             1.595      page-faults               #    0,019 M/sec                  
-       226.429.176      cycles                    #    2,765 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       383.896.997      instructions              #    1,70  insns per cycle        
-        69.959.626      branches                  #  854,302 M/sec                  
-         1.943.845      branch-misses             #    2,78% of all branches        
+WC Time IO OPERATION: 0.001923
+CPU Time IO OPERATION: 0.001912
 
-       0,082272599 seconds time elapsed
+Total WC Time: 0.082919
+Total CPU Time: 0.082691
 
+ROT-13 SEQ tests
 Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
+WC Time ALLOCATION: 0.025942
+CPU Time ALLOCATION: 0.025864
 
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
+WC Time ALGORITHM: 1.953422
+CPU Time ALGORITHM: 0.046495
 
-         79,951565      task-clock (msec)         #    0,997 CPUs utilized          
-                 0      context-switches          #    0,000 K/sec                  
-                 0      cpu-migrations            #    0,000 K/sec                  
-             1.597      page-faults               #    0,020 M/sec                  
-       225.113.210      cycles                    #    2,816 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       383.017.186      instructions              #    1,70  insns per cycle        
-        69.796.500      branches                  #  872,985 M/sec                  
-         1.945.905      branch-misses             #    2,79% of all branches        
+WC Time IO OPERATION: 0.001961
+CPU Time IO OPERATION: 0.001952
 
-       0,080155361 seconds time elapsed
+Total WC Time: 1.981324
+Total CPU Time: 0.074311
 
+ROT-13 SEQ tests
 Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
+WC Time ALLOCATION: 0.035143
+CPU Time ALLOCATION: 0.035001
 
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
+WC Time ALGORITHM: 0.046790
+CPU Time ALGORITHM: 0.046718
 
-         74,491649      task-clock (msec)         #    0,997 CPUs utilized          
-                 0      context-switches          #    0,000 K/sec                  
-                 0      cpu-migrations            #    0,000 K/sec                  
-             1.597      page-faults               #    0,021 M/sec                  
-       224.880.191      cycles                    #    3,019 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       382.897.024      instructions              #    1,70  insns per cycle        
-        69.781.363      branches                  #  936,768 M/sec                  
-         1.944.269      branch-misses             #    2,79% of all branches        
+WC Time IO OPERATION: 0.001938
+CPU Time IO OPERATION: 0.001929
 
-       0,074697358 seconds time elapsed
-
-Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
-
-         77,478568      task-clock (msec)         #    0,997 CPUs utilized          
-                 1      context-switches          #    0,013 K/sec                  
-                 0      cpu-migrations            #    0,000 K/sec                  
-             1.597      page-faults               #    0,021 M/sec                  
-       224.940.049      cycles                    #    2,903 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       382.931.041      instructions              #    1,70  insns per cycle        
-        69.783.421      branches                  #  900,680 M/sec                  
-         1.941.945      branch-misses             #    2,78% of all branches        
-
-       0,077690800 seconds time elapsed
-
-Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
-
-         74,057069      task-clock (msec)         #    0,997 CPUs utilized          
-                 1      context-switches          #    0,014 K/sec                  
-                 0      cpu-migrations            #    0,000 K/sec                  
-             1.595      page-faults               #    0,022 M/sec                  
-       225.683.928      cycles                    #    3,047 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       382.879.786      instructions              #    1,70  insns per cycle        
-        69.776.473      branches                  #  942,199 M/sec                  
-         1.942.337      branch-misses             #    2,78% of all branches        
-
-       0,074292333 seconds time elapsed
-
-Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
-
-         76,744384      task-clock (msec)         #    0,997 CPUs utilized          
-                 0      context-switches          #    0,000 K/sec                  
-                 0      cpu-migrations            #    0,000 K/sec                  
-             1.597      page-faults               #    0,021 M/sec                  
-       224.735.440      cycles                    #    2,928 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       382.876.885      instructions              #    1,70  insns per cycle        
-        69.772.523      branches                  #  909,155 M/sec                  
-         1.943.610      branch-misses             #    2,79% of all branches        
-
-       0,076949113 seconds time elapsed
-
-Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
-
-         79,598776      task-clock (msec)         #    0,997 CPUs utilized          
-                 0      context-switches          #    0,000 K/sec                  
-                 0      cpu-migrations            #    0,000 K/sec                  
-             1.597      page-faults               #    0,020 M/sec                  
-       224.643.491      cycles                    #    2,822 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       382.842.362      instructions              #    1,70  insns per cycle        
-        69.766.093      branches                  #  876,472 M/sec                  
-         1.942.956      branch-misses             #    2,78% of all branches        
-
-       0,079807336 seconds time elapsed
-
-Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
-
-         78,465101      task-clock (msec)         #    0,997 CPUs utilized          
-                 0      context-switches          #    0,000 K/sec                  
-                 0      cpu-migrations            #    0,000 K/sec                  
-             1.595      page-faults               #    0,020 M/sec                  
-       225.101.623      cycles                    #    2,869 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       382.891.190      instructions              #    1,70  insns per cycle        
-        69.783.208      branches                  #  889,353 M/sec                  
-         1.946.153      branch-misses             #    2,79% of all branches        
-
-       0,078666840 seconds time elapsed
-
-Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
-
-         78,816616      task-clock (msec)         #    0,997 CPUs utilized          
-                 0      context-switches          #    0,000 K/sec                  
-                 0      cpu-migrations            #    0,000 K/sec                  
-             1.596      page-faults               #    0,020 M/sec                  
-       224.860.178      cycles                    #    2,853 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       382.831.619      instructions              #    1,70  insns per cycle        
-        69.767.750      branches                  #  885,191 M/sec                  
-         1.944.355      branch-misses             #    2,79% of all branches        
-
-       0,079023436 seconds time elapsed
-
-Tamanho do Arquivo: 1580879 
-ROT-13 tests: SUCCEEDED
-
- Performance counter stats for './ROT13/seq/rot-13 sample_files/texto_3.txt':
-
-         74,799081      task-clock (msec)         #    0,997 CPUs utilized          
-                 1      context-switches          #    0,013 K/sec                  
-                 0      cpu-migrations            #    0,000 K/sec                  
-             1.597      page-faults               #    0,021 M/sec                  
-       225.944.644      cycles                    #    3,021 GHz                    
-   <not supported>      stalled-cycles-frontend  
-   <not supported>      stalled-cycles-backend   
-       382.834.269      instructions              #    1,69  insns per cycle        
-        69.769.421      branches                  #  932,758 M/sec                  
-         1.944.230      branch-misses             #    2,79% of all branches        
-
-       0,075016993 seconds time elapsed
+Total WC Time: 0.083872
+Total CPU Time: 0.083648
 
