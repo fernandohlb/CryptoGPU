@@ -24,7 +24,7 @@ void print_hex(BYTE str[], int len)
         printf("%02x", str[idx]);
 }
 
-int aes_ecb_test()
+int aes_ecb_test(char * path_to_file)
 {    
     WORD key_schedule[60];
     BYTE * plaintext;
@@ -35,7 +35,7 @@ int aes_ecb_test()
 
     int pass = 1;
 
-    const char *filename = "sample_files/hubble_1.tif";
+    const char *filename = path_to_file;
 
     //Key Setup
     aes_key_setup(key, key_schedule, 256);
@@ -95,7 +95,7 @@ int aes_ecb_test()
     return(pass);
 }
 
-int aes_cbc_test()
+int aes_cbc_test(char * path_to_file)
 {
     WORD key_schedule[60];
     BYTE * plaintext;
@@ -106,7 +106,7 @@ int aes_cbc_test()
     BYTE key[32] = {0x60,0x3d,0xeb,0x10,0x15,0xca,0x71,0xbe,0x2b,0x73,0xae,0xf0,0x85,0x7d,0x77,0x81,0x1f,0x35,0x2c,0x07,0x3b,0x61,0x08,0xd7,0x2d,0x98,0x10,0xa3,0x09,0x14,0xdf,0xf4};
     int pass = 1;
 
-    const char *filename = "sample_files/hubble_1.tif";
+    const char *filename = path_to_file;
 
     //Key Setup
     aes_key_setup(key, key_schedule, 256);
@@ -165,19 +165,24 @@ int aes_cbc_test()
 }
 
 
-int aes_test()
+int aes_test(char * path_to_file)
 {
     int pass = 1;
 
-    pass = pass && aes_ecb_test();
-    // pass = pass && aes_cbc_test();
+    pass = pass && aes_ecb_test(path_to_file);
+    pass = pass && aes_cbc_test(path_to_file);
 
     return(pass);
 }
 
 int main(int argc, char *argv[])
 {
-    printf("AES Tests: %s\n", aes_test() ? "SUCCEEDED" : "FAILED");
+    if(argc != 2){
+        printf("\nUsage:\n\t %s <relative/path/to/file>\n", argv[0]);
+        return 1;
+    }
+
+    printf("AES Tests: %s\n", aes_test(argv[1]) ? "SUCCEEDED" : "FAILED");
 
     return(0);
 }

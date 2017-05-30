@@ -1,6 +1,6 @@
 #include "aes.h"
 
-int aes_ecb_test()
+int aes_ecb_test(char * path_to_file)
 {
     BYTE *h_data;
     BYTE *d_data = NULL;
@@ -11,7 +11,7 @@ int aes_ecb_test()
     BYTE key[32] = {0x60,0x3d,0xeb,0x10,0x15,0xca,0x71,0xbe,0x2b,0x73,0xae,0xf0,0x85,0x7d,0x77,0x81,0x1f,0x35,0x2c,0x07,0x3b,0x61,0x08,0xd7,0x2d,0x98,0x10,0xa3,0x09,0x14,0xdf,0xf4};
     WORD h_key_schedule[60];
     WORD * d_key_schedule;
-    const char *filename = "sample_files/hubble_1.tif";
+    const char *filename = path_to_file;
 
     //Key Setup
     aes_key_setup(key, h_key_schedule, 256);
@@ -87,7 +87,6 @@ int aes_ecb_test()
     //Launch encryption
     printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
     aes_encrypt_ecb<<<blocksPerGrid, threadsPerBlock>>>(d_data, st.st_size, d_encrypted_data, d_key_schedule, 256);
-    // my_test<<<blocksPerGrid, threadsPerBlock>>>();
     err = cudaGetLastError();
     check_cuda_error("Failed to launch aes_encrypt kernel", err);
 
@@ -122,7 +121,7 @@ int aes_ecb_test()
     return TRUE;
 };
 
-int aes_cbc_test()
+int aes_cbc_test(char * path_to_file)
 {
     BYTE *h_data;
     BYTE *d_data = NULL;
@@ -135,7 +134,7 @@ int aes_cbc_test()
     BYTE key[32] = {0x60,0x3d,0xeb,0x10,0x15,0xca,0x71,0xbe,0x2b,0x73,0xae,0xf0,0x85,0x7d,0x77,0x81,0x1f,0x35,0x2c,0x07,0x3b,0x61,0x08,0xd7,0x2d,0x98,0x10,0xa3,0x09,0x14,0xdf,0xf4};
     WORD h_key_schedule[60];
     WORD * d_key_schedule;
-    const char *filename = "sample_files/hubble_1.tif";
+    const char *filename = path_to_file;
 
     //Key Setup
     aes_key_setup(key, h_key_schedule, 256);
@@ -213,15 +212,10 @@ int aes_cbc_test()
     printf("Copy input BYTE data from the host memory to the CUDA device\n");
     err = cudaMemcpy(d_iv, h_iv, sizeof(BYTE) * AES_BLOCK_SIZE, cudaMemcpyHostToDevice);
     check_cuda_error("Failed to copy BYTE data from host to device", err);
-
-    // Launch the aes_encrypt CUDA Kernel
-    int threadsPerBlock = 256;
-    int blocksPerGrid =((sizeof(BYTE) * plaintext_size)/AES_BLOCK_SIZE/threadsPerBlock)+1;
    
     //Launch encryption
-    printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
-    aes_encrypt_cbc<<<blocksPerGrid, threadsPerBlock>>>(d_data, plaintext_size, d_encrypted_data, d_key_schedule, 256, d_iv);
-    // my_test<<<blocksPerGrid, threadsPerBlock>>>();
+    printf("CUDA kernel launch with 1 blocks of 1 threads\n");
+    aes_encrypt_cbc<<<1, 1>>>(d_data, plaintext_size, d_encrypted_data, d_key_schedule, 256, d_iv);
     err = cudaGetLastError();
     check_cuda_error("Failed to launch aes_encrypt kernel", err);
 
@@ -233,8 +227,8 @@ int aes_cbc_test()
 
 
     //Launch decryption
-    printf("CUDA kernel launch with %d blocks of %d threads\n", blocksPerGrid, threadsPerBlock);
-    aes_decrypt_cbc<<<blocksPerGrid, threadsPerBlock>>>(d_encrypted_data, plaintext_size, d_decrypted_data, d_key_schedule, 256, d_iv);
+    printf("CUDA kernel launch with 1 blocks of 1 threads\n");
+    aes_decrypt_cbc<<<1, 1>>>(d_encrypted_data, plaintext_size, d_decrypted_data, d_key_schedule, 256, d_iv);
     err = cudaGetLastError();
     check_cuda_error("Failed to launch aes_decrypt kernel", err);
 
@@ -257,19 +251,24 @@ int aes_cbc_test()
 };
 
 
-int aes_test()
+int aes_test(char * path_to_file)
 {
     int pass = 1;
 
-    // pass = pass && aes_ecb_test();
-    pass = pass && aes_cbc_test();
+    pass = pass && aes_ecb_test(path_to_file);
+    pass = pass && aes_cbc_test(path_to_file);
 
     return(pass);
 }
 
 int main(int argc, char *argv[])
 {
-    printf("AES Tests: %s\n", aes_test() ? "SUCCEEDED" : "FAILED");
+    if(argc != 2){
+        printf("\nUsage:\n\t %s <relative/path/to/file>\n", argv[0]);
+        return 1;
+    }
+
+    printf("AES Tests: %s\n", aes_test(argv[1]) ? "SUCCEEDED" : "FAILED");
 
     return(0);
 }
