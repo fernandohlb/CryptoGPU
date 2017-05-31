@@ -119,10 +119,34 @@ write.csv(fulldata, file = "./results_perf/results.csv")
  print(fig1)
  dev.off()
  
- fig2 <- ggplot(data=fulldata, aes(x = factor(filesize), y=time_elapsed, fill=type)) +
-   geom_bar(stat="identity", position=position_dodge())+
-   #   facet_wrap(~imsize, scales = "free", labeller = "label_both") +
-    ggtitle("Tempo de Execução x Tamanho do Arquivo em MB processado") +
+
+
+  dados <- read.csv("./results_perf/results.csv")
+  library("dplyr")
+  
+  
+  
+  select(dados, algorithm, type, filesize,time_elapsed,time_allocation,time_algorithm,time_ioops)
+  
+  grouped_result <- group_by(dados, algorithm, type, filesize)
+  
+  summarised_result <- summarise(grouped_result,
+                                 media_time_elapsed = mean(time_elapsed, na.rm = TRUE),
+                                 desv_pad_time_elapsed = sd(time_elapsed),
+                                 media_time_allocation = mean(time_allocation, na.rm = TRUE),
+                                 desv_pad_time_allocation = sd(time_allocation),
+                                 media_time_algorithm = mean(time_algorithm, na.rm = TRUE),
+                                 desv_pad_time_algorithm = sd(time_algorithm),
+                                 media_time_ioops = mean(time_ioops, na.rm = TRUE),
+                                 desv_pad_time_ioops = sd(time_ioops))
+
+
+  write.csv(summarised_result, file = "./results_perf/summarised_result.csv")  
+
+  fig2 <- ggplot(data=summarised_result, aes(x = factor(filesize), y=media_time_elapsed, fill=type)) +
+    geom_bar(stat="identity", position=position_dodge())+
+    #   facet_wrap(~imsize, scales = "free", labeller = "label_both") +
+    ggtitle("Média do Tempo de Execução x Tamanho do Arquivo em MB processado") +
     xlab("Tamanho do Arquivo em MB processado") +
     ylab("Tempo de execução (s)") +
     guides(color = guide_legend(title="Implementação")) +
@@ -138,24 +162,11 @@ write.csv(fulldata, file = "./results_perf/results.csv")
   
   pdf("resultado_aes_bar.pdf", width = 16, height = 9)
   print(fig2)
-  dev.off()
-
-  dados <- read.csv("./results_perf/results.csv")
-  library("dplyr")
+  dev.off()  
   
   
-  
-  select(dados, algorithm, type, filesize,time_elapsed)
-  
-  grouped_result <- group_by(dados, algorithm, type, filesize)
-  
-  summarised_result <- summarise(grouped_result,
-                                 media = mean(time_elapsed, na.rm = TRUE),
-                                 desv_pad = sd(time_elapsed))
-  write.csv(summarised_result, file = "./results_perf/summarised_result.csv")  
-
-   fig3 <- ggplot(data = summarised_result, aes(x = as.factor(filesize), y = media, color = type,group = type)) +
-     geom_errorbar(aes(ymin=media-desv_pad, ymax=media+desv_pad), width=.1) +
+   fig3 <- ggplot(data = summarised_result, aes(x = as.factor(filesize), y = media_time_elapsed, color = type,group = type)) +
+     geom_errorbar(aes(ymin=media_time_elapsed-desv_pad_time_elapsed, ymax=media_time_elapsed+desv_pad_time_elapsed), width=.1) +
      geom_line() +
      geom_point()+
      ggtitle("Média do Tempo de Execução x Tamanho do Arquivo em MB processado",
