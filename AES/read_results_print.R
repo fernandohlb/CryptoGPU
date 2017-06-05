@@ -98,7 +98,7 @@ fulldata = rbind(
 
 write.csv(fulldata, file = "./results_perf/results.csv")
 
- fig1 <- ggplot(data = fulldata, aes(x = as.factor(filesize), y = time_elapsed, color = type)) +
+ fig1 <- ggplot(data = fulldata, aes(x = as.factor(filesize), y = time_algorithm, color = type)) +
    geom_boxplot() +
 #   facet_wrap(~imsize, scales = "free", labeller = "label_both") +
    ggtitle("Tempo de Execução x Tamanho do Arquivo em MB processado") +
@@ -143,7 +143,7 @@ write.csv(fulldata, file = "./results_perf/results.csv")
 
   write.csv(summarised_result, file = "./results_perf/summarised_result.csv")  
 
-  fig2 <- ggplot(data=summarised_result, aes(x = factor(filesize), y=media_time_elapsed, fill=type)) +
+  fig2 <- ggplot(data=summarised_result, aes(x = factor(filesize), y=media_time_algorithm, fill=type)) +
     geom_bar(stat="identity", position=position_dodge())+
     #   facet_wrap(~imsize, scales = "free", labeller = "label_both") +
     ggtitle("Média do Tempo de Execução x Tamanho do Arquivo em MB processado") +
@@ -165,8 +165,8 @@ write.csv(fulldata, file = "./results_perf/results.csv")
   dev.off()  
   
   
-   fig3 <- ggplot(data = summarised_result, aes(x = as.factor(filesize), y = media_time_elapsed, color = type,group = type)) +
-     geom_errorbar(aes(ymin=media_time_elapsed-desv_pad_time_elapsed, ymax=media_time_elapsed+desv_pad_time_elapsed), width=.1) +
+   fig3 <- ggplot(data = summarised_result, aes(x = as.factor(filesize), y = media_time_algorithm, color = type,group = type)) +
+     geom_errorbar(aes(ymin=media_time_algorithm-desv_pad_time_algorithm, ymax=media_time_algorithm+desv_pad_time_algorithm), width=.1) +
      geom_line() +
      geom_point()+
      ggtitle("Média do Tempo de Execução x Tamanho do Arquivo em MB processado",

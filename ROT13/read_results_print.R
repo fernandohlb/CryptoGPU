@@ -2,11 +2,13 @@
 library("ggplot2")
 
 rot13_gpu_texto_1 = read.table("./results_perf/rot13_gpu/texto_1.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+rot13_gpu_texto_2 = read.table("./results_perf/rot13_gpu/texto_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 rot13_gpu_texto_3 = read.table("./results_perf/rot13_gpu/texto_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 rot13_gpu_texto_4 = read.table("./results_perf/rot13_gpu/texto_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 rot13_gpu_texto_5 = read.table("./results_perf/rot13_gpu/texto_5.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 
 rot13_seq_texto_1 = read.table("./results_perf/rot13_seq/texto_1.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+rot13_seq_texto_2 = read.table("./results_perf/rot13_seq/texto_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 rot13_seq_texto_3 = read.table("./results_perf/rot13_seq/texto_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 rot13_seq_texto_4 = read.table("./results_perf/rot13_seq/texto_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 rot13_seq_texto_5 = read.table("./results_perf/rot13_seq/texto_5.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
@@ -15,6 +17,7 @@ rot13_seq_texto_5 = read.table("./results_perf/rot13_seq/texto_5.log", header = 
 
 data_gpu = rbind(
   rot13_gpu_texto_1,
+  rot13_gpu_texto_2,
   rot13_gpu_texto_3,
   rot13_gpu_texto_4,
   rot13_gpu_texto_5
@@ -22,6 +25,7 @@ data_gpu = rbind(
 
 data_seq = rbind(
   rot13_seq_texto_1,
+  rot13_seq_texto_2,
   rot13_seq_texto_3,
   rot13_seq_texto_4,
   rot13_seq_texto_5
@@ -97,7 +101,7 @@ fulldata = rbind(
 
 write.csv(fulldata, file = "./results_perf/results.csv")
 
-fig1 <- ggplot(data = fulldata, aes(x = as.factor(filesize), y = time_elapsed, color = type)) +
+fig1 <- ggplot(data = fulldata, aes(x = as.factor(filesize), y = time_algorithm, color = type)) +
   geom_boxplot() +
   #   facet_wrap(~imsize, scales = "free", labeller = "label_both") +
   ggtitle("Tempo de Execução x Tamanho do Arquivo em MB processado") +
@@ -142,7 +146,7 @@ summarised_result <- summarise(grouped_result,
 
 write.csv(summarised_result, file = "./results_perf/summarised_result.csv")  
 
-fig2 <- ggplot(data=summarised_result, aes(x = factor(filesize), y=media_time_elapsed, fill=type)) +
+fig2 <- ggplot(data=summarised_result, aes(x = factor(filesize), y=media_time_algorithm, fill=type)) +
   geom_bar(stat="identity", position=position_dodge())+
   #   facet_wrap(~imsize, scales = "free", labeller = "label_both") +
   ggtitle("Média do Tempo de Execução x Tamanho do Arquivo em MB processado") +
@@ -164,8 +168,8 @@ print(fig2)
 dev.off()  
 
 
-fig3 <- ggplot(data = summarised_result, aes(x = as.factor(filesize), y = media_time_elapsed, color = type,group = type)) +
-  geom_errorbar(aes(ymin=media_time_elapsed-desv_pad_time_elapsed, ymax=media_time_elapsed+desv_pad_time_elapsed), width=.1) +
+fig3 <- ggplot(data = summarised_result, aes(x = as.factor(filesize), y = media_time_algorithm, color = type,group = type)) +
+  geom_errorbar(aes(ymin=media_time_algorithm-desv_pad_time_algorithm, ymax=media_time_algorithm+desv_pad_time_algorithm), width=.1) +
   geom_line() +
   geom_point()+
   ggtitle("Média do Tempo de Execução x Tamanho do Arquivo em MB processado",

@@ -32,7 +32,7 @@ THREADS=256
   for ((i=1; i<=$ITERATIONS; i++)); do
        echo $i
        ./ROT13/seq/rot13 sample_files/texto_1.txt>> ROT13/results_perf/rot13_seq/texto_1.log 2>&1
-       ./ROT13/seq/rot13 sample_files/texto_3.txt>> ROT13/results_perf/rot13_seq/texto_3.log 2>&1
+       ./ROT13/seq/rot13 sample_files/texto_2.txt>> ROT13/results_perf/rot13_seq/texto_2.log 2>&1
        ./ROT13/seq/rot13 sample_files/texto_3.txt>> ROT13/results_perf/rot13_seq/texto_3.log 2>&1
        ./ROT13/seq/rot13 sample_files/texto_4.txt>> ROT13/results_perf/rot13_seq/texto_4.log 2>&1
        ./ROT13/seq/rot13 sample_files/texto_5.txt>> ROT13/results_perf/rot13_seq/texto_5.log 2>&1
@@ -49,7 +49,7 @@ THREADS=256
        echo $i
        #./ROT13/gpu/rot13 $file $THREADS>> ROT13/results_perf/rot13_gpu/$(basename $file | cut -d'.' -f1).log 2>&1
        ./ROT13/gpu/rot13 sample_files/texto_1.txt $THREADS>> ROT13/results_perf/rot13_gpu/texto_1.log 2>&1
-       ./ROT13/gpu/rot13 sample_files/texto_3.txt $THREADS>> ROT13/results_perf/rot13_gpu/texto_3.log 2>&1
+       ./ROT13/gpu/rot13 sample_files/texto_2.txt $THREADS>> ROT13/results_perf/rot13_gpu/texto_2.log 2>&1
        ./ROT13/gpu/rot13 sample_files/texto_3.txt $THREADS>> ROT13/results_perf/rot13_gpu/texto_3.log 2>&1
        ./ROT13/gpu/rot13 sample_files/texto_4.txt $THREADS>> ROT13/results_perf/rot13_gpu/texto_4.log 2>&1
        ./ROT13/gpu/rot13 sample_files/texto_5.txt $THREADS>> ROT13/results_perf/rot13_gpu/texto_5.log 2>&1
