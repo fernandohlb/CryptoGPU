@@ -5,11 +5,22 @@ des_gpu_hubble_1 = read.table("./results_perf/des_gpu/hubble_1.log", header = FA
 des_gpu_hubble_2 = read.table("./results_perf/des_gpu/hubble_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 des_gpu_hubble_3 = read.table("./results_perf/des_gpu/hubble_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 des_gpu_hubble_4 = read.table("./results_perf/des_gpu/hubble_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_gpu_texto_1 = read.table("./results_perf/des_gpu/texto_1.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_gpu_texto_2 = read.table("./results_perf/des_gpu/texto_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_gpu_texto_3 = read.table("./results_perf/des_gpu/texto_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_gpu_texto_4 = read.table("./results_perf/des_gpu/texto_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_gpu_texto_5 = read.table("./results_perf/des_gpu/texto_5.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+
 
 des_seq_hubble_1 = read.table("./results_perf/des_seq/hubble_1.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 des_seq_hubble_2 = read.table("./results_perf/des_seq/hubble_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 des_seq_hubble_3 = read.table("./results_perf/des_seq/hubble_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 des_seq_hubble_4 = read.table("./results_perf/des_seq/hubble_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_seq_texto_1 = read.table("./results_perf/des_seq/texto_1.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_seq_texto_2 = read.table("./results_perf/des_seq/texto_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_seq_texto_3 = read.table("./results_perf/des_seq/texto_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_seq_texto_4 = read.table("./results_perf/des_seq/texto_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+des_seq_texto_5 = read.table("./results_perf/des_seq/texto_5.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 
 
 
@@ -17,14 +28,26 @@ data_gpu = rbind(
   des_gpu_hubble_1,
   des_gpu_hubble_2,
   des_gpu_hubble_3,
-  des_gpu_hubble_4
+  des_gpu_hubble_4,
+  des_gpu_texto_1,
+  des_gpu_texto_2,
+  des_gpu_texto_3,
+  des_gpu_texto_4,
+  des_gpu_texto_5
+  
 )
 
 data_seq = rbind(
   des_seq_hubble_1,
   des_seq_hubble_2,
   des_seq_hubble_3,
-  des_seq_hubble_4
+  des_seq_hubble_4,
+  des_seq_texto_1,
+  des_seq_texto_2,
+  des_seq_texto_3,
+  des_seq_texto_4,
+  des_seq_texto_5
+  
 )
 
 #Leitura dos dados GPU

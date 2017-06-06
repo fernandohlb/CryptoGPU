@@ -5,11 +5,23 @@ aes_gpu_hubble_1 = read.table("./results_perf/aes_gpu/hubble_1.log", header = FA
 aes_gpu_hubble_2 = read.table("./results_perf/aes_gpu/hubble_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 aes_gpu_hubble_3 = read.table("./results_perf/aes_gpu/hubble_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 aes_gpu_hubble_4 = read.table("./results_perf/aes_gpu/hubble_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_gpu_texto_1 = read.table("./results_perf/aes_gpu/texto_1.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_gpu_texto_2 = read.table("./results_perf/aes_gpu/texto_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_gpu_texto_3 = read.table("./results_perf/aes_gpu/texto_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_gpu_texto_4 = read.table("./results_perf/aes_gpu/texto_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_gpu_texto_5 = read.table("./results_perf/aes_gpu/texto_5.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+
 
 aes_seq_hubble_1 = read.table("./results_perf/aes_seq/hubble_1.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 aes_seq_hubble_2 = read.table("./results_perf/aes_seq/hubble_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 aes_seq_hubble_3 = read.table("./results_perf/aes_seq/hubble_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
 aes_seq_hubble_4 = read.table("./results_perf/aes_seq/hubble_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_seq_texto_1 = read.table("./results_perf/aes_seq/texto_1.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_seq_texto_2 = read.table("./results_perf/aes_seq/texto_2.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_seq_texto_3 = read.table("./results_perf/aes_seq/texto_3.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_seq_texto_4 = read.table("./results_perf/aes_seq/texto_4.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+aes_seq_texto_5 = read.table("./results_perf/aes_seq/texto_5.log", header = FALSE, sep = "\t", stringsAsFactors = FALSE)
+
 
 
 
@@ -17,14 +29,25 @@ data_gpu = rbind(
   aes_gpu_hubble_1,
   aes_gpu_hubble_2,
   aes_gpu_hubble_3,
-  aes_gpu_hubble_4
+  aes_gpu_hubble_4,
+  aes_gpu_texto_1,
+  aes_gpu_texto_2,
+  aes_gpu_texto_3,
+  aes_gpu_texto_4,
+  aes_gpu_texto_5
 )
 
 data_seq = rbind(
   aes_seq_hubble_1,
   aes_seq_hubble_2,
   aes_seq_hubble_3,
-  aes_seq_hubble_4
+  aes_seq_hubble_4,
+  aes_seq_texto_1,
+  aes_seq_texto_2,
+  aes_seq_texto_3,
+  aes_seq_texto_4,
+  aes_seq_texto_5
+  
 )
 
 #Leitura dos dados GPU
